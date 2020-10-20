@@ -377,7 +377,7 @@ vAPI.DOMFilterer = class {
     }
 
     hideNodeObserverHandler(mutations) {
-        if ( vAPI.userStylesheet.disabled ) { return; }
+        if ( typeof vAPI !== "undefined" && vAPI.userStylesheet.disabled ) { return; }
         const stagedNodes = this.hiddenNodesetToProcess;
         for ( const mutation of mutations ) {
             stagedNodes.add(mutation.target);
